@@ -1,0 +1,30 @@
+ID: hana_cap_app
+_schema-version: "2.1"
+description: HANA Cloud Application Programming Model App
+version: 0.0.1
+modules:
+  - name: hana_cap_app-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: hana_cap_app-db-hdi-container
+  - name: hana_cap_app-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: hana_cap_app-db-hdi-container
+resources:
+  - name: hana_cap_app-db-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
