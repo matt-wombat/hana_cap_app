@@ -1,5 +1,5 @@
 ID: hana_cap_app
-_schema-version: "2.1"
+_schema-version: '2.1'
 description: HANA Cloud Application Programming Model App
 version: 0.0.1
 modules:
@@ -20,11 +20,21 @@ modules:
     provides:
       - name: srv_api
         properties:
-          url: ${default-url}
+          url: '${default-url}'
     requires:
       - name: hana_cap_app-db-hdi-container
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: srv_api
+        properties:
+          name: srv_api
+          url: '~{url}'
+          forwardAuthToken: true
+        group: destinations
 resources:
   - name: hana_cap_app-db-hdi-container
     type: com.sap.xs.hdi-container
     properties:
-      hdi-container-name: ${service-name}
+      hdi-container-name: '${service-name}'

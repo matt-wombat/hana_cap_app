@@ -13,8 +13,8 @@ This needs to be consitently changed in all of the source code.
 
 ## Features
 
-- **interactions.cds** and **interaction_srv.cds** Core Data and Services
-
+- **db/interactions.cds** and **srv/interaction_srv.cds** Definition of Core Data and Services
+- **web/index.html** Simple code to create a model from OData V4 service and using it in a table
 
 ## Further references
 
@@ -24,3 +24,5 @@ Core Data and Services (CDS) Language Reference Documentation: https://help.sap.
 ## Troubleshooting
 
 - Errors occurring on CDS Build as well as on running node.js application fixed by changing dependency to @sap/cds to "3.21.1" or "3.21.x" in package.json in app root as well as srv subfolder. Used HANA Express VM based on HANA 2.00 SP04.
+
+ 
