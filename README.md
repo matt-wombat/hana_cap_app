@@ -15,6 +15,7 @@ This needs to be consitently changed in all of the source code.
 
 - **db/interactions.cds** and **srv/interaction_srv.cds** Definition of Core Data and Services
 - **web/index.html** Simple code to create a model from OData V4 service and using it in a table
+- **xsuaa** Enable security by adding user authentication and authorization service
 
 ## Further references
 

@@ -1,9 +1,10 @@
 {
 	"welcomeFile": "index.html",
-	"authenticationMethod": "none",
+	"authenticationMethod": "route",
 	"routes": [{
 		"source": "/catalog/(.*)",
 		"destination": "srv_api",
-		"csrfProtection": true
+		"csrfProtection": true,
+		"authenticationType": "xsuaa"
 	}]
 }
